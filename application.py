@@ -1,14 +1,12 @@
+import os
 from flask import Flask, render_template
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/')
-def homepage():
-    return render_template("main.html")
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.html')
 
-@application.route('/dashboard/')
-def dashboard():
-    return render_template("dashboard.html")
 
-if __name__ == "__main__":
-    application.run()
+if __name__ == '__main__':
+    app.run()
