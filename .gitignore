@@ -10,3 +10,4 @@ env/
 .DS_Store
 apikey.py
 .ipynb_checkpoints
+__pycache__/

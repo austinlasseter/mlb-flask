@@ -53,59 +53,59 @@ class Baseball:
     # Batting statistics
     def batting_stats(self, *args):
         option='batting'
-        stats_dict = {}
+        errors=[]
+        stats_dict = self.results
         for arg in args:
             if arg not in list(self.response['teamStatsTotals'][0]['stats'][option].keys()):
-                self.errors.append('Please request from the following statistics: {}'.format(
+                errors.append('Please request from the following statistics: {}'.format(
                     ', '.join(list(self.response['teamStatsTotals'][0]['stats'][option].keys()))))
-                print(self.errors[0])
+                print(errors[0])
             else:
                 statvalue = self.response['teamStatsTotals'][0]['stats'][option][arg]
                 stats_dict[arg]=statvalue
-                self.results.update(stats_dict)
-        return self.results
+        return stats_dict
 
     # Pitching statistics
     def pitching_stats(self, *args):
         option='pitching'
-        stats_dict = {}
+        errors=[]
+        stats_dict = self.results
         for arg in args:
             if arg not in list(self.response['teamStatsTotals'][0]['stats'][option].keys()):
-                self.errors.append('Please request from the following statistics: {}'.format(
+                errors.append('Please request from the following statistics: {}'.format(
                     ', '.join(list(self.response['teamStatsTotals'][0]['stats'][option].keys()))))
-                print(self.errors[0])
+                print(errors[0])
             else:
                 statvalue = self.response['teamStatsTotals'][0]['stats'][option][arg]
                 stats_dict[arg]=statvalue
-                self.results.update(stats_dict)
-        return self.results
+        return stats_dict
 
     # Fielding statistics
     def fielding_stats(self, *args):
         option='fielding'
-        stats_dict = {}
+        errors=[]
+        stats_dict = self.results
         for arg in args:
             if arg not in list(self.response['teamStatsTotals'][0]['stats'][option].keys()):
-                self.errors.append('Please request from the following statistics: {}'.format(
+                errors.append('Please request from the following statistics: {}'.format(
                     ', '.join(list(self.response['teamStatsTotals'][0]['stats'][option].keys()))))
-                print(self.errors[0])
+                print(errors[0])
             else:
                 statvalue = self.response['teamStatsTotals'][0]['stats'][option][arg]
                 stats_dict[arg]=statvalue
-                self.results.update(stats_dict)
-        return self.results
+        return stats_dict
 
     # Overall statistics
     def overall_stats(self, *args):
         option='standings'
-        stats_dict = {}
+        errors=[]
+        stats_dict = self.results
         for arg in args:
             if arg not in list(self.response['teamStatsTotals'][0]['stats'][option].keys()):
-                self.errors.append('Please request from the following statistics: {}'.format(
+                errors.append('Please request from the following statistics: {}'.format(
                     ', '.join(list(self.response['teamStatsTotals'][0]['stats'][option].keys()))))
-                print(self.errors[0])
+                print(errors[0])
             else:
                 statvalue = self.response['teamStatsTotals'][0]['stats'][option][arg]
                 stats_dict[arg]=statvalue
-                self.results.update(stats_dict)
-        return self.results
+        return stats_dict
