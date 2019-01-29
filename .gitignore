@@ -1,4 +1,5 @@
 release/
+env/
 *.pyc
 
 # Elastic Beanstalk Files
